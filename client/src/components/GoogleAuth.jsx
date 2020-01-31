@@ -1,8 +1,9 @@
 import React from 'react';
+// redux
+import { connect } from 'react-redux';
+import { signIn, signOut } from '../actions';
 
 class GoogleAuth extends React.Component {
-  state = { isSignedIn: null };
-
   componentDidMount = () => {
     window.gapi.load('client:auth2', () => {
       window.gapi.client.init({
@@ -10,14 +11,19 @@ class GoogleAuth extends React.Component {
         scope: 'email'
       }).then(() => {
         this.auth = window.gapi.auth2.getAuthInstance();
-        this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+
+        this.onAuthChange(this.auth.isSignedIn.get());
         this.auth.isSignedIn.listen(this.onAuthChange);
       });
     });
   };
 
-  onAuthChange = () => {
-   this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+  onAuthChange = (isSignedIn) => {
+   if (isSignedIn) {
+    this.props.signIn(this.auth.currentUser.get().getId());
+   } else {
+    this.props.signOut();
+   }
   };
 
   onSignIn = () => {
@@ -29,14 +35,14 @@ class GoogleAuth extends React.Component {
   };
 
   renderAuthButton() {
-    if (this.state.isSignedIn === true) {
+    if (this.props.isSignedIn === true) {
       return (
         <button onClick={this.onSignOut} className="ui red medium button">
           <i className="power off icon" style={{ marginRight: '15px' }}></i>
           Sign Out
         </button>
       );
-    } else if (this.state.isSignedIn === false) {
+    } else if (this.props.isSignedIn === false) {
       return (
         <button onClick={this.onSignIn} className="ui violet medium button">
           <i style={{ marginRight: '15px' }} className="google icon"></i>
@@ -50,7 +56,6 @@ class GoogleAuth extends React.Component {
         </div>
       );
     }
-
   };
 
   render() {
@@ -62,4 +67,8 @@ class GoogleAuth extends React.Component {
   }
 };
 
-export default GoogleAuth;
+const mapStateToProps = (state) => {
+  return { isSignedIn: state.auth.isSignedIn };
+};
+
+export default connect(mapStateToProps, { signIn, signOut })(GoogleAuth);
