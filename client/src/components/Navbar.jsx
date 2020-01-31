@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// components import
+import GoogleAuth from './GoogleAuth';
+
 const Navbar = () => {
   return (
     <div className="ui menu">
@@ -19,6 +22,9 @@ const Navbar = () => {
       <Link to="/streams/1/delete" className="link item">
         Delete
       </Link>
+      <div className="right menu">
+        <GoogleAuth />
+      </div>
     </div>
   );
 };
