@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 // redux
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 // file import
 import reducers from './reducers';
 
@@ -11,7 +11,11 @@ import reducers from './reducers';
 import App from './components/App';
 
 // Creating redux store
-const store = createStore(reducers);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(
+  reducers,
+  composeEnhancers(applyMiddleware())
+);
 
 // mounting app to root
 ReactDOM.render(
