@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Router, Route } from 'react-router-dom';
 
 // components import
 import Navbar from './Navbar'
@@ -9,19 +9,22 @@ import StreamCreate from './streams/StreamCreate'
 import StreamEdit from './streams/StreamEdit'
 import StreamDelete from './streams/StreamDelete'
 
+// Custom history object
+import history from '../history'
+
 const App = () => {
   return (
     <div>
-      <BrowserRouter>
+      <Router history={history}>
         <Navbar />
-        <div className="ui container center aligned">
+        <div className="ui container">
           <Route path="/" exact component={StreamList} />
           <Route path="/streams/new" exact component={StreamCreate} />
-          <Route path="/streams/1/edit" exact component={StreamEdit} />
-          <Route path="/streams/1/delete" exact component={StreamDelete} />
-          <Route path="/streams/1" exact component={StreamShow} />
+          <Route path="/streams/:id/edit/" exact component={StreamEdit} />
+          <Route path="/streams/:id/delete" exact component={StreamDelete} />
+          <Route path="/streams/:id" exact component={StreamShow} />
         </div>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }
