@@ -16,10 +16,10 @@ const Navbar = () => {
       <Link to="/streams/1" className="link item">
         Show
       </Link>
-      <Link to="/streams/1/edit" className="link item">
+      <Link to="/streams/edit/1" className="link item">
         Edit
       </Link>
-      <Link to="/streams/1/delete" className="link item">
+      <Link to="/streams/delete/1" className="link item">
         Delete
       </Link>
       <div className="right menu">
