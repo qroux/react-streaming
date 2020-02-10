@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchStreams } from '../../actions';
+// components
+import Setup from './Setup'
 
 class StreamList extends React.Component {
   componentDidMount() {
@@ -13,11 +15,12 @@ class StreamList extends React.Component {
       return (
         <div className="sl-create">
           <h2 className="mf">Want to create your own channel ?</h2>
-          <div>
+          <div id="create-btn">
             <Link to="/streams/new" className="ui basic inverted button violet">
               GO !
             </Link>
           </div>
+          <Setup />
         </div>
       );
     }

@@ -56,8 +56,8 @@ class StreamShow extends React.Component {
         <video ref={this.videoRef} style={{ width: '100%'}} controls />
         <div className="ss-text">
           <div className="ss-description">
-            <h3><i className="info circle icon"></i> More Info</h3>
-            <h5>{description}</h5>
+            <h3 className="mf"><i className="info circle icon"></i> More Info</h3>
+            <h5 className="mf">{description}</h5>
           </div>
         </div>
       </div>

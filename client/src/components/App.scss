@@ -1,3 +1,4 @@
+$dark-text: rgba(0, 0, 0, 0.8);
 $light-text: rgb(209, 209, 209);
 $lighter-text: rgba(209, 209, 209, 0.1);
 $bg-dark: rgb(26, 23, 28);
@@ -47,8 +48,23 @@ a {
 }
 .sl-create {
   text-align: center;
-  margin-top: 15vh;
+  margin-top: 5vh;
   padding-bottom: 10vh;
+}
+#create-btn {
+  margin: 30px 0;
+}
+// Setup component
+#s-main {
+  color: $dark-text;
+}
+#obs {
+  height: 60px;
+  width: auto;
+}
+#central-column {
+  border-left: 1px solid $light-text;
+  border-right: 1px solid $light-text;
 }
 
 // StreamForm component
