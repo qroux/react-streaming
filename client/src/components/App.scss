@@ -1,0 +1,95 @@
+$light-text: rgb(209, 209, 209);
+$lighter-text: rgba(209, 209, 209, 0.1);
+$bg-dark: rgb(26, 23, 28);
+$twitch: rgb(100, 65, 164);
+
+body {
+  background-color: $bg-dark;
+  color: $light-text;
+}
+a {
+  color: $light-text;
+  transition: 0.4s;
+  &:hover {
+    color: $twitch;
+  }
+}
+.twitch-bg {
+  background-color: $twitch !important;
+}
+.mf {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+// StreamList component
+.sl-main {
+}
+.sl-header {
+  text-align: center;
+  margin-bottom: 10vh;
+  padding-top: 50px;
+}
+.sl-list {
+  padding: 20px;
+  h2 {
+    padding-bottom: 20px;
+    border-bottom: 1px solid $light-text;
+  }
+  .item {
+    padding: 15px 0 !important;
+    border-bottom: 1px solid $lighter-text;
+    .description {
+      color: $light-text !important;
+      word-break: break-all;
+    }
+  }
+}
+.sl-create {
+  text-align: center;
+  margin-top: 15vh;
+  padding-bottom: 10vh;
+}
+
+// StreamForm component
+.sc-main {
+
+}
+.sf-header {
+  text-align: center;
+  margin-bottom: 10vh;
+  padding-top: 50px;
+}
+.field {
+  label {
+    color: $light-text !important;
+    font-size: 17px !important;
+    padding: 15px 0;
+  }
+}
+.f-btn {
+  margin-top: 5vh;
+  text-align: center;
+}
+
+// StreamShow component
+.ss-main {
+  padding-top: 20px;
+}
+.ss-title {
+  margin-bottom: 15px;
+}
+.ss-text {
+  border-top: 1px solid $lighter-text;
+  border-bottom: 1px solid $lighter-text;
+  margin-top: 5px;
+  padding: 20px 10px;
+  .ss-description {
+    word-break: break-all;
+  }
+}
+
+//  Modal component
+.modal {
+  color: black;
+}

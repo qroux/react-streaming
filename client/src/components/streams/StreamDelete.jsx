@@ -22,19 +22,15 @@ class StreamDelete extends React.Component {
 
   renderAction() {
     return (
-      <div>
+      <React.Fragment>
         <button onClick={this.onClickHandler} className="ui button negative">Delete</button>
         <Link to="/" className="ui button cancel">Cancel</Link>
-      </div>
+      </React.Fragment>
     );
   }
 
   renderTitle() {
-    if (!this.props.stream) {
-      return 'Delete stream'
-    }
-
-    return `Delete "${this.props.stream.title}" stream`
+    return 'Delete Stream'
   }
 
   renderContent() {

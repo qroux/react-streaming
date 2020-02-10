@@ -6,21 +6,9 @@ import GoogleAuth from './GoogleAuth';
 
 const Navbar = () => {
   return (
-    <div className="ui menu">
+    <div className="ui menu twitch-bg">
       <Link to="/" className="link item">
-        <i className="home icon"></i>
-      </Link>
-      <Link to="/streams/new" className="link item">
-        Create
-      </Link>
-      <Link to="/streams/1" className="link item">
-        Show
-      </Link>
-      <Link to="/streams/edit/1" className="link item">
-        Edit
-      </Link>
-      <Link to="/streams/delete/1" className="link item">
-        Delete
+        <i className="twitch big inverted icon"></i>
       </Link>
       <div className="right menu">
         <GoogleAuth />

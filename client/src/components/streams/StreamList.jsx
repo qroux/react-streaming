@@ -11,10 +11,13 @@ class StreamList extends React.Component {
   renderCreate() {
     if (this.props.isSignedIn) {
       return (
-        <div style={{ textAlign: 'right' }}>
-          <Link to="/streams/new" className="ui button primary">
-            Create Stream
-          </Link>
+        <div className="sl-create">
+          <h2 className="mf">Want to create your own channel ?</h2>
+          <div>
+            <Link to="/streams/new" className="ui basic inverted button violet">
+              GO !
+            </Link>
+          </div>
         </div>
       );
     }
@@ -24,11 +27,11 @@ class StreamList extends React.Component {
     if (this.props.currentUserId === stream.userId) {
       return (
         <div className="right floated content">
-          <Link to={`/streams/edit/${stream.id}`} className="ui button primary">
-            Edit
+          <Link to={`/streams/edit/${stream.id}`} className="mini ui inverted button violet" title="Parameter">
+            <i className="cog icon" style={{ marginRight: '-2px' }}/>
           </Link>
-          <Link to={`/streams/delete/${stream.id}`} className="ui button negative">
-            Delete
+          <Link to={`/streams/delete/${stream.id}`} className="mini ui inverted button cancel" title="Delete Channel">
+            <i className="trash icon" style={{ marginRight: '-2px' }} />
           </Link>
         </div>
       );
@@ -40,7 +43,7 @@ class StreamList extends React.Component {
       return (
         <div className="item" key={stream.id}>
           {this.renderAdmin(stream)}
-          <i className="large middle aligned icon camera" />
+          <i className="large middle aligned tv icon" />
           <div className="content">
             <Link to={`streams/${stream.id}`}>
               {stream.title}
@@ -56,10 +59,15 @@ class StreamList extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Streams</h2>
-        <div className="ui celled list">
-          {this.renderList()}
+      <div className="sl-main">
+        <div className="sl-header">
+          <h1 className="mf">Welcome to cursed Twitch !</h1>
+        </div>
+        <div className="sl-list">
+          <h2>Channels</h2>
+          <div className="ui big relaxed divided list">
+            {this.renderList()}
+          </div>
         </div>
         {this.renderCreate()}
       </div>

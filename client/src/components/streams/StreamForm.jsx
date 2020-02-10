@@ -34,7 +34,7 @@ class StreamForm extends React.Component {
   render() {
     return (
       <div>
-        <div>
+        <div className="mf center">
           <form
             onSubmit={this.props.handleSubmit(this.onSubmit)}
             className="ui form error"
@@ -49,7 +49,11 @@ class StreamForm extends React.Component {
               component={this.renderInput}
               label="Add a description"
             />
-            <button className="ui button primary">Submit</button>
+            <div className="f-btn">
+              <button className="ui button violet">
+                <div className="mf">Submit</div>
+              </button>
+            </div>
           </form>
         </div>
       </div>
