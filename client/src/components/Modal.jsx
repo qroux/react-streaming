@@ -9,7 +9,7 @@ const Modal = props => {
           {props.title}
         </div>
         <div className="content">
-          {props.content}
+          <h4 className="mf">{props.content}</h4>
         </div>
         <div className="actions">
           {props.action}

@@ -20,7 +20,6 @@ class StreamList extends React.Component {
               GO !
             </Link>
           </div>
-          <Setup />
         </div>
       );
     }
@@ -64,7 +63,7 @@ class StreamList extends React.Component {
     return (
       <div className="sl-main">
         <div className="sl-header">
-          <h1 className="mf">Welcome to cursed Twitch !</h1>
+          <h1 className="mf">Welcome to Cursed Twitch</h1>
         </div>
         <div className="sl-list">
           <h2>Channels</h2>
@@ -72,6 +71,7 @@ class StreamList extends React.Component {
             {this.renderList()}
           </div>
         </div>
+        <Setup />
         {this.renderCreate()}
       </div>
     );

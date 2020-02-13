@@ -51,7 +51,7 @@ class StreamShow extends React.Component {
     return (
       <div className="ss-main">
         <div className="ss-title">
-          <h1>{title}'s Stream</h1>
+          <h1 className="mf">{title}'s Stream</h1>
         </div>
         <video ref={this.videoRef} style={{ width: '100%'}} controls />
         <div className="ss-text">

@@ -5,6 +5,9 @@ import StreamForm from './StreamForm';
 
 class StreamCreate extends React.Component {
   onSubmit = (formValues) => {
+    if (!this.props.isSignedIn) {
+      return
+    }
     this.props.createStream(formValues);
   };
 
@@ -12,7 +15,7 @@ class StreamCreate extends React.Component {
     return (
       <div className="sc-main">
         <div className="sf-header">
-          <h1 className="mf">Create a Stream</h1>
+          <h1 className="mf">Create your Stream</h1>
         </div>
         <div>
           <StreamForm onSubmit={this.onSubmit}/>
@@ -22,4 +25,8 @@ class StreamCreate extends React.Component {
   };
 };
 
-export default connect(null, { createStream })(StreamCreate);
+const mapStateToProps = (state) => {
+  return { isSignedIn: state.auth.isSignedIn };
+};
+
+export default connect(mapStateToProps, { createStream })(StreamCreate);

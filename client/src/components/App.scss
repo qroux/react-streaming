@@ -28,7 +28,7 @@ a {
 }
 .sl-header {
   text-align: center;
-  margin-bottom: 10vh;
+  margin-bottom: 5vh;
   padding-top: 50px;
 }
 .sl-list {
@@ -48,15 +48,19 @@ a {
 }
 .sl-create {
   text-align: center;
-  margin-top: 5vh;
-  padding-bottom: 10vh;
+  padding-bottom: 5vh;
 }
 #create-btn {
   margin: 30px 0;
 }
 // Setup component
+#s-title {
+  text-align: center;
+  line-height: 3;
+}
 #s-main {
   color: $dark-text;
+  margin-bottom: 5vh;
 }
 #obs {
   height: 60px;
@@ -98,10 +102,13 @@ a {
 .ss-text {
   border-top: 1px solid $lighter-text;
   border-bottom: 1px solid $lighter-text;
-  margin-top: 5px;
+  margin-top: 2px;
   padding: 20px 10px;
   .ss-description {
     word-break: break-all;
+    h5 {
+      padding-left: 1vw;
+    }
   }
 }
 

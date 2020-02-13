@@ -23,14 +23,14 @@ class StreamDelete extends React.Component {
   renderAction() {
     return (
       <React.Fragment>
-        <button onClick={this.onClickHandler} className="ui button negative">Delete</button>
-        <Link to="/" className="ui button cancel">Cancel</Link>
+        <button onClick={this.onClickHandler} className="ui button violet"><div className="mf">Delete</div></button>
+        <Link to="/" className="ui button cancel"><div className="mf">Cancel</div></Link>
       </React.Fragment>
     );
   }
 
   renderTitle() {
-    return 'Delete Stream'
+    return <div className="mf">Delete Stream</div>
   }
 
   renderContent() {
@@ -58,7 +58,7 @@ class StreamDelete extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     stream: state.streams[ownProps.match.params.id],
-    currentUserId: state.auth.userId,
+    currentUserId: state.auth.userId
   };
 };
 

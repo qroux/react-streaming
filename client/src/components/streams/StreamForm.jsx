@@ -34,6 +34,7 @@ class StreamForm extends React.Component {
   render() {
     return (
       <div>
+        <hr/>
         <div className="mf center">
           <form
             onSubmit={this.props.handleSubmit(this.onSubmit)}

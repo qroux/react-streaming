@@ -10,6 +10,9 @@ class StreamEdit extends React.Component {
   }
 
   onSubmit = (formValues) => {
+    if (this.props.currentUserId !== this.props.stream.userId) {
+      return
+    }
     this.props.editStream(this.props.match.params.id, formValues);
   };
 
@@ -33,7 +36,10 @@ class StreamEdit extends React.Component {
 };
 
 const mapStateToProps = (state, ownProps) => {
-  return { stream: state.streams[ownProps.match.params.id] };
+  return {
+    stream: state.streams[ownProps.match.params.id],
+    currentUserId: state.auth.userId
+  };
 };
 
 export default connect(mapStateToProps, { fetchStream, editStream })(StreamEdit);
