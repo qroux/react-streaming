@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchStreams } from '../../actions';
+// thirs part library
+import ReactTwitchEmbedVideo from "react-twitch-embed-video";
 // components
 import Setup from './Setup'
 
@@ -62,9 +64,13 @@ class StreamList extends React.Component {
   render() {
     return (
       <div className="sl-main">
-        <div className="sl-header">
-          <h1 className="mf">Welcome to Cursed Twitch</h1>
-        </div>
+      <div className="player">
+        <ReactTwitchEmbedVideo
+          autoplay
+          channel="chilledcatradio"
+          width="100%"
+        />
+      </div>
         <div className="sl-list">
           <h2>Channels</h2>
           <div className="ui big relaxed divided list">
