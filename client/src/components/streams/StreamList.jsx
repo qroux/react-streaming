@@ -67,7 +67,7 @@ class StreamList extends React.Component {
       <div className="player">
         <ReactTwitchEmbedVideo
           autoplay
-          channel="chilledcatradio"
+          channel="chillhopmusic"
           width="100%"
         />
       </div>
