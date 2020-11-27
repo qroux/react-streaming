@@ -2,13 +2,13 @@
   "streams": [
     {
       "title": "Quentin",
-      "description": "working from linux + windows",
+      "description": "working from linux locally, (NB: doesn't work on heroku: video stream not allowed on free plan",
       "userId": "107387027902624472379",
       "id": 1
     },
     {
       "title": "Quentin 2",
-      "description": "working from android",
+      "description": "working from android locally, (NB: doesn't work on heroku: video stream not allowed on free plan",
       "userId": "107387027902624472379",
       "id": 2
     }
